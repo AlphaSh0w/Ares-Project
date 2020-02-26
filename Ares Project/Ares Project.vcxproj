@@ -154,10 +154,12 @@
     <ClCompile Include="Ares Project.cpp" />
     <ClCompile Include="Soldiers.cpp" />
     <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Soldiers.h" />
     <ClInclude Include="Stats.h" />
+    <ClInclude Include="Weapons.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
