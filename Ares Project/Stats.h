@@ -4,8 +4,9 @@
 class Stats
 {
 public:
-	Stats(int hp, int sp, int def, int initiative);
+	Stats(int attack,int hp, int sp, int def, int initiative);
 public:
+	int attack;
 	int hp;
 	int sp;
 	int def;

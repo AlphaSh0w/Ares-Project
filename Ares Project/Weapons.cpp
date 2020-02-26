@@ -5,16 +5,22 @@ Weffect Weapon::GetEffect()
 	return effect;
 }
 
-Weapon::Weapon(int hp, int sp, int def, int initiative,std::string name, Weffect effect)
+Weapon::Weapon(int attack,int hp, int sp, int def, int initiative,std::string name, Weffect effect)
 	:
-	stats(hp,sp,def,initiative),
+	stats(attack,hp,sp,def,initiative),
 	name(name),
 	effect(effect)
 {
 }
 
-Sword::Sword(int hp, int sp, int def, int initiative)
+Sword::Sword(int attack)
 	:
-	Weapon(hp,sp,def,initiative,"sword",Weffect::None)
+	Weapon(attack,0,0,0,0,"sword",Weffect::None)
+{
+}
+
+Fists::Fists()
+	:
+	Weapon(0,0,0,0,0, "fists", Weffect::None)
 {
 }

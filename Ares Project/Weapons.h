@@ -16,14 +16,19 @@ private:
 	std::string name;
 	Weffect effect;
 protected:
-	Weapon(int hp, int sp, int def, int initiative,std::string name, Weffect effect);
+	Weapon(int attack,int hp, int sp, int def, int initiative,std::string name, Weffect effect);
 protected:
 	Stats stats;
+};
+
+class Fists : public Weapon
+{
+public:
+	Fists();
 };
 
 class Sword : public Weapon
 {
 public:
-	Sword(int hp, int sp, int def, int initiative);
-private:
+	Sword(int attack);
 };
