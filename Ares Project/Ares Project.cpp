@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Soldiers.h"
 #include "Weapons.h"
+#include "Armor.h"
 int main()
 {
 	Sword sword(20);
@@ -11,7 +12,7 @@ int main()
 	Peasant peasant;
 	peasant.GiveWeapon(new Sword(20));
 	peasant.GiveWeapon(new Fists());
-	
+	BasicArmor basicarmor;
     std::cout << "Hello World!\n";
 }
 

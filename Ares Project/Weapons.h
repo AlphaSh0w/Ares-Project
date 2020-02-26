@@ -2,7 +2,7 @@
 #include <string>
 #include "Stats.h"
 
-enum Weffect
+enum Weffect //different weapon effects
 {
 	None,
 	ArmorBypass

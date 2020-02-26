@@ -152,11 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ares Project.cpp" />
+    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Soldiers.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="Soldiers.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="Weapons.h" />
