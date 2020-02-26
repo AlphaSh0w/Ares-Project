@@ -12,7 +12,7 @@ int main()
 	Peasant peasant;
 	peasant.GiveWeapon(new Sword(20));
 	peasant.GiveWeapon(new Fists());
-	BasicArmor basicarmor;
+	peasant.GiveArmor(new BasicArmor());
     std::cout << "Hello World!\n";
 }
 
