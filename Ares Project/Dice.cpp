@@ -2,9 +2,6 @@
 #include <assert.h>
 
 Dice::Dice()
-	:
-	rng(std::random_device()()),
-	dice_dist(1,6)
 {
 }
 
