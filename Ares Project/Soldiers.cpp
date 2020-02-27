@@ -1,9 +1,28 @@
 #include "Soldiers.h"
-
+#include <assert.h>
+#include <algorithm>
 Soldier::Soldier(int attack, int hp, int sp, int def, int initiative)
 	:
 	stats(attack,hp,sp,def,initiative)
 {
+}
+
+int Soldier::Attack(Soldier & other)
+{
+	assert(weapon != nullptr); //If assertion fails, the soldier is attacking without having a weapon (not even fists).
+	return other.ReceiveDamage(stats.attack + weapon->GetStats().attack);
+}
+
+int Soldier::ReceiveDamage(int damage)
+{
+	assert(armor != nullptr); //If assertion fails, the soldier being attacked does not have armor (not even basic armor).
+	return ReceiveRawDamage(std::max(0,damage - stats.def - armor->GetStats().def));
+}
+
+int Soldier::ReceiveRawDamage(int damage)
+{
+	stats.hp -= damage;
+	return damage;
 }
 
 Weapon* Soldier::GiveWeapon(Weapon * in_weapon)

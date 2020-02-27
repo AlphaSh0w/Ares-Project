@@ -1,5 +1,10 @@
 #include "Armor.h"
 
+Stats Armor::GetStats()
+{
+	return stats;
+}
+
 Armor::Armor(int attack, int hp, int sp, int def, int initiative, std::string name, Aeffect effect)
 	:
 	stats(attack,hp,sp,def,initiative),

@@ -1,5 +1,10 @@
 #include "Weapons.h"
 
+Stats Weapon::GetStats()
+{
+	return stats;
+}
+
 Weffect Weapon::GetEffect()
 {
 	return effect;

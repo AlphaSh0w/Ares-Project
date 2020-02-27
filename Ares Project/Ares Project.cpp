@@ -10,8 +10,12 @@ int main()
 	Sword sword(20);
 	sword.GetEffect();
 	Peasant peasant;
+	Peasant p2;
+	p2.GiveArmor(new BasicArmor());
 	peasant.GiveWeapon(new Sword(20));
+	peasant.Attack(p2);
 	peasant.GiveWeapon(new Fists());
+	peasant.Attack(p2);
 	peasant.GiveArmor(new BasicArmor());
     std::cout << "Hello World!\n";
 }

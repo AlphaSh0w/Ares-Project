@@ -9,7 +9,7 @@ enum Aeffect //Different armor effects
 class Armor
 {
 public:
-	
+	Stats GetStats();
 private:
 	std::string name;
 	Aeffect effect;

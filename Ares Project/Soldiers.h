@@ -6,6 +6,9 @@
 class Soldier
 {
 public:
+	int Attack(Soldier& other);
+	int ReceiveDamage(int damage);
+	int ReceiveRawDamage(int damage);
 	Weapon* GiveWeapon(Weapon* in_weapon); //returns a pointer to the old weapon, else returns nullptr.
 	Armor* GiveArmor(Armor* in_armor); //returns a pointer to the old armor, else returns nullptr.
 private:
