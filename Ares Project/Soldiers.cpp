@@ -10,7 +10,7 @@ Soldier::Soldier(int attack, int hp, int sp, int def, int initiative)
 int Soldier::Attack(Soldier & other)
 {
 	assert(weapon != nullptr); //If assertion fails, the soldier is attacking without having a weapon (not even fists).
-	return other.ReceiveDamage(stats.attack + weapon->GetStats().attack);
+	return other.ReceiveDamage(stats.attack + weapon->GetStats().attack + dice.SumRoll());
 }
 
 int Soldier::ReceiveDamage(int damage)
@@ -23,6 +23,11 @@ int Soldier::ReceiveRawDamage(int damage)
 {
 	stats.hp -= damage;
 	return damage;
+}
+
+bool Soldier::IsAlive()
+{
+	return stats.hp > 0;
 }
 
 Weapon* Soldier::GiveWeapon(Weapon * in_weapon)

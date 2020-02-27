@@ -2,6 +2,7 @@
 #include "Stats.h"
 #include "Weapons.h"
 #include "Armor.h"
+#include "Dice.h"
 
 class Soldier
 {
@@ -9,11 +10,13 @@ public:
 	int Attack(Soldier& other);
 	int ReceiveDamage(int damage);
 	int ReceiveRawDamage(int damage);
+	bool IsAlive();
 	Weapon* GiveWeapon(Weapon* in_weapon); //returns a pointer to the old weapon, else returns nullptr.
 	Armor* GiveArmor(Armor* in_armor); //returns a pointer to the old armor, else returns nullptr.
 private:
 	Weapon* weapon = nullptr;
 	Armor* armor = nullptr;
+	Dice dice;
 protected:
 	Soldier(int attack, int hp, int sp, int def, int initiative);
 protected:
