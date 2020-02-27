@@ -22,10 +22,11 @@ protected:
 protected:
 	Stats stats;
 };
-
-class Peasant : public Soldier
+namespace SoldierTypes
 {
-public:
-	Peasant();
-
-};
+	class Peasant : public Soldier
+	{
+	public:
+		Peasant();
+	};
+}
