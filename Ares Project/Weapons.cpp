@@ -1,5 +1,7 @@
 #include "Weapons.h"
 
+using namespace WeaponTypes;
+
 Stats Weapon::GetStats()
 {
 	return stats;

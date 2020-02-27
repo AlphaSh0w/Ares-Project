@@ -19,8 +19,11 @@ protected:
 	Stats stats;
 };
 
-class BasicArmor : public Armor
+namespace ArmorTypes
 {
-public:
-	BasicArmor();
-};
+	class BasicArmor : public Armor
+	{
+	public:
+		BasicArmor();
+	};
+}

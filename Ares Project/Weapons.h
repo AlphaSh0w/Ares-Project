@@ -22,14 +22,17 @@ protected:
 	Stats stats;
 };
 
-class Fists : public Weapon
+namespace WeaponTypes
 {
-public:
-	Fists();
-};
+	class Fists : public Weapon
+	{
+	public:
+		Fists();
+	};
 
-class Sword : public Weapon
-{
-public:
-	Sword(int attack);
-};
+	class Sword : public Weapon
+	{
+	public:
+		Sword(int attack);
+	};
+}

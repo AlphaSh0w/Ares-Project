@@ -1,6 +1,9 @@
 #include "Soldiers.h"
 #include <assert.h>
 #include <algorithm>
+
+using namespace SoldierTypes;
+
 Soldier::Soldier(int attack, int hp, int sp, int def, int initiative)
 	:
 	stats(attack,hp,sp,def,initiative)

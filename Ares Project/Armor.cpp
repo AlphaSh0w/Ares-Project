@@ -1,5 +1,7 @@
 #include "Armor.h"
 
+using namespace ArmorTypes;
+
 Stats Armor::GetStats()
 {
 	return stats;
