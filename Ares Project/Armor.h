@@ -9,8 +9,9 @@ enum Aeffect //Different armor effects
 class Armor
 {
 public:
-	Stats GetStats();
-	std::string GetName();
+	Stats GetStats() const;
+	std::string GetName() const;
+	Aeffect GetEffect() const;
 private:
 	std::string name;
 	Aeffect effect;

@@ -164,6 +164,7 @@
     <ClInclude Include="Soldiers.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="Weapons.h" />
+    <ClInclude Include="Stash.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

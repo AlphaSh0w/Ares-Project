@@ -28,7 +28,7 @@ int Soldier::ReceiveRawDamage(int damage)
 	return damage;
 }
 
-bool Soldier::IsAlive()
+bool Soldier::IsAlive() const
 {
 	return stats.hp > 0;
 }

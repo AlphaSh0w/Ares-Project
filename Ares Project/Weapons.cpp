@@ -2,17 +2,17 @@
 
 using namespace WeaponTypes;
 
-Stats Weapon::GetStats()
+Stats Weapon::GetStats() const
 {
 	return stats;
 }
 
-Weffect Weapon::GetEffect()
+Weffect Weapon::GetEffect() const
 {
 	return effect;
 }
 
-std::string Weapon::GetName()
+std::string Weapon::GetName() const
 {
 	return name;
 }

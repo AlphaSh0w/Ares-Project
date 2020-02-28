@@ -10,7 +10,7 @@ public:
 	int Attack(Soldier& other);
 	int ReceiveDamage(int damage);
 	int ReceiveRawDamage(int damage);
-	bool IsAlive();
+	bool IsAlive() const;
 	Weapon* GiveWeapon(Weapon* in_weapon); //returns a pointer to the old weapon, else returns nullptr.
 	Weapon* RemoveWeapon(); //returns current weapon, if weapon is fists, returns nullptr.
 	Armor* GiveArmor(Armor* in_armor); //returns a pointer to the old armor, else returns nullptr.

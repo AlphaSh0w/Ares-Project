@@ -11,9 +11,9 @@ enum Weffect //different weapon effects
 class Weapon
 {
 public:
-	Stats GetStats();
-	Weffect GetEffect();
-	std::string GetName();
+	Stats GetStats() const;
+	Weffect GetEffect() const;
+	std::string GetName() const;
 private:
 	std::string name;
 	Weffect effect;

@@ -6,18 +6,23 @@
 #include "Soldiers.h"
 #include "Weapons.h"
 #include "Armor.h"
-#include "WeaponStash.h"
+#include "stash.h"
 
 int main()
 {
-	WeaponStash w;
-	w.AddWeapon(new WeaponTypes::Sword(350));
+	Stash<Weapon> w;
+	Stash<Armor> a;
+	w.Add(new WeaponTypes::Sword(350));
+	w.Add(new WeaponTypes::Sword(350));
+	a.Add(new ArmorTypes::BasicArmor);
+	a.Add(new ArmorTypes::BasicArmor);
+	a.Remove(0);
     std::cout << "Hello World!\n";
 	SoldierTypes::Peasant test;
 	test.GiveWeapon(new WeaponTypes::Sword(20));
 	Weapon* temp = test.RemoveWeapon();
 	delete temp;
-	test.GiveArmor(new ArmorTypes::NoArmor);
+	test.GiveArmor(new ArmorTypes::BasicArmor);
 	test.RemoveArmor();
 	std::cin.get();
 	return 0;
