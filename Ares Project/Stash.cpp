@@ -8,3 +8,12 @@ void WeaponStash::equip(Soldier& soldier, int i)
 		Stash::Add(temp);
 	}
 }
+
+void ArmorStash::equip(Soldier & soldier, int i)
+{
+	Armor* temp = soldier.GiveArmor(Stash::Pop(i));
+	if (temp != nullptr)//If the soldier had an armor, return it to the stash.
+	{
+		Stash::Add(temp);
+	}
+}

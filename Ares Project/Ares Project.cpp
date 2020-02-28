@@ -10,12 +10,19 @@
 
 int main()
 {
+	SoldierTypes::Peasant test;
 	WeaponStash w;
 	w.Add(new WeaponTypes::Sword(350));
 	w.Add(new WeaponTypes::Sword(150));
 	w.Add(new WeaponTypes::Sword(300));
+	ArmorStash a;
+	a.Add(new ArmorTypes::BasicArmor);
+	a.Add(new ArmorTypes::BasicArmor);
+	a.Add(new ArmorTypes::BasicArmor);
+	a.equip(test, 1);
+	a.equip(test, 1);
+	a.equip(test, 1);
     std::cout << "Hello World!\n";
-	SoldierTypes::Peasant test;
 	w.equip(test, 1);
 	w.equip(test, 1);
 	w.equip(test, 1);
