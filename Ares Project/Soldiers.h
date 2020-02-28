@@ -13,10 +13,14 @@ public:
 	bool IsAlive();
 	Weapon* GiveWeapon(Weapon* in_weapon); //returns a pointer to the old weapon, else returns nullptr.
 	Armor* GiveArmor(Armor* in_armor); //returns a pointer to the old armor, else returns nullptr.
+	virtual ~Soldier();
 private:
-	Weapon* weapon = nullptr;
-	Armor* armor = nullptr;
 	Dice dice;
+	WeaponTypes::Fists *fists = new WeaponTypes::Fists;
+	ArmorTypes::NoArmor *noarmor = new ArmorTypes::NoArmor;
+
+	Weapon* weapon = fists;
+	Armor* armor = noarmor;
 protected:
 	Soldier(int attack, int hp, int sp, int def, int initiative);
 protected:

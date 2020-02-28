@@ -12,6 +12,11 @@ Weffect Weapon::GetEffect()
 	return effect;
 }
 
+std::string Weapon::GetName()
+{
+	return name;
+}
+
 Weapon::Weapon(int attack,int hp, int sp, int def, int initiative,std::string name, Weffect effect)
 	:
 	stats(attack,hp,sp,def,initiative),

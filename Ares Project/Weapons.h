@@ -13,6 +13,7 @@ class Weapon
 public:
 	Stats GetStats();
 	Weffect GetEffect();
+	std::string GetName();
 private:
 	std::string name;
 	Weffect effect;

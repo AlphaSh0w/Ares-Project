@@ -10,6 +10,7 @@ class Armor
 {
 public:
 	Stats GetStats();
+	std::string GetName();
 private:
 	std::string name;
 	Aeffect effect;
@@ -21,6 +22,12 @@ protected:
 
 namespace ArmorTypes
 {
+	class NoArmor : public Armor
+	{
+	public:
+		NoArmor();
+	};
+
 	class BasicArmor : public Armor
 	{
 	public:

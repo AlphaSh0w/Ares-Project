@@ -47,6 +47,20 @@ Armor * Soldier::GiveArmor(Armor * in_armor)
 	return temp;
 }
 
+Soldier::~Soldier()
+{
+	if (weapon->GetName() != "fists")
+	{
+		delete weapon;
+	}
+	if (armor->GetName() != "noarmor")
+	{
+		delete armor;
+	}
+	delete fists;
+	delete noarmor;
+}
+
 Peasant::Peasant()
 	:
 	Soldier(20,300,0,5,10)
