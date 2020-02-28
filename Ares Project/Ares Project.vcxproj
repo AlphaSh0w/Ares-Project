@@ -155,6 +155,7 @@
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Soldiers.cpp" />
+    <ClCompile Include="Stash.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Weapons.cpp" />
   </ItemGroup>

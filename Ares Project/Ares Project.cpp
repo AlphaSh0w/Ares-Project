@@ -10,15 +10,15 @@
 
 int main()
 {
-	Stash<Weapon> w;
-	Stash<Armor> a;
+	WeaponStash w;
 	w.Add(new WeaponTypes::Sword(350));
-	w.Add(new WeaponTypes::Sword(350));
-	a.Add(new ArmorTypes::BasicArmor);
-	a.Add(new ArmorTypes::BasicArmor);
-	a.Remove(0);
+	w.Add(new WeaponTypes::Sword(150));
+	w.Add(new WeaponTypes::Sword(300));
     std::cout << "Hello World!\n";
 	SoldierTypes::Peasant test;
+	w.equip(test, 1);
+	w.equip(test, 1);
+	w.equip(test, 1);
 	test.GiveWeapon(new WeaponTypes::Sword(20));
 	Weapon* temp = test.RemoveWeapon();
 	delete temp;
