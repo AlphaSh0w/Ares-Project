@@ -35,16 +35,63 @@ bool Soldier::IsAlive()
 
 Weapon* Soldier::GiveWeapon(Weapon * in_weapon)
 {
-	Weapon* temp = weapon;
-	weapon = in_weapon;
-	return temp;
+	assert(in_weapon->GetName() != "fists");//If assertion fails, tried to give fists to a soldier.(Use RemoveWeapon() instead, the soldier will receive fists).
+	if (weapon->GetName() != "fists")
+	{
+		Weapon* temp = weapon;
+		weapon = in_weapon;
+		return temp;
+	}
+	else
+	{
+		weapon = in_weapon;
+		return nullptr;
+	}
+
+}
+
+Weapon * Soldier::RemoveWeapon()
+{
+	if (weapon->GetName() != "fists")
+	{
+		Weapon* temp = weapon;
+		weapon = fists;
+		return temp;
+	}
+	else
+	{
+		return nullptr;
+	}
 }
 
 Armor * Soldier::GiveArmor(Armor * in_armor)
 {
-	Armor* temp = armor;
-	armor = in_armor;
-	return temp;
+	assert(in_armor->GetName() != "noarmor"); //If assertion fails, tried to give noarmor to a soldier.(use RemoveArmor() instead, the soldier will receive noarmor.)
+	if (armor->GetName() != "noarmor")
+	{
+		Armor* temp = armor;
+		armor = in_armor;
+		return temp;
+	}
+	else
+	{
+		armor = in_armor;
+		return nullptr;
+	}
+}
+
+Armor * Soldier::RemoveArmor()
+{
+	if (armor->GetName() != "noarmor")
+	{
+		Armor* temp = armor;
+		armor = noarmor;
+		return temp;
+	}
+	else
+	{
+		return nullptr;
+	}
 }
 
 Soldier::~Soldier()

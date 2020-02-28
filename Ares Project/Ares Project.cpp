@@ -2,25 +2,24 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "Soldiers.h"
 #include "Weapons.h"
 #include "Armor.h"
-#include "Dice.h"
+#include "WeaponStash.h"
+
 int main()
 {
-	Dice d;
-	d.SumRoll();
-	Sword sword(20);
-	sword.GetEffect();
-	Peasant peasant;
-	Peasant p2;
-	p2.GiveArmor(new BasicArmor());
-	peasant.GiveWeapon(new Sword(20));
-	peasant.Attack(p2);
-	peasant.Attack(p2);
-	peasant.Attack(p2);
-	peasant.Attack(p2);
-	peasant.GiveArmor(new BasicArmor());
+	WeaponStash w;
+	w.AddWeapon(new WeaponTypes::Sword(350));
     std::cout << "Hello World!\n";
+	SoldierTypes::Peasant test;
+	test.GiveWeapon(new WeaponTypes::Sword(20));
+	Weapon* temp = test.RemoveWeapon();
+	delete temp;
+	test.GiveArmor(new ArmorTypes::NoArmor);
+	test.RemoveArmor();
+	std::cin.get();
+	return 0;
 }
 
