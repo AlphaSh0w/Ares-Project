@@ -28,5 +28,11 @@ private:
 class WeaponStash : public Stash<Weapon>
 {
 public:
-	void equip(Soldier& soldier, int i) override;
+	void equip(Soldier& soldier, int i) override;//returns the old soldier weapon to the stash, gives him the selected one.
+};
+
+class ArmorStash : public Stash<Armor>
+{
+public:
+	void equip(Soldier& soldier, int i) override;//returns the old soldier armor to the stash, give him the selected one.
 };
