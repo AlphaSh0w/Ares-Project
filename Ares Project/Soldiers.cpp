@@ -13,18 +13,42 @@ Soldier::Soldier(int attack, int hp, int sp, int def, int initiative)
 int Soldier::Attack(Soldier & other)
 {
 	assert(weapon != nullptr); //If assertion fails, the soldier is attacking without having a weapon (not even fists).
-	return other.ReceiveDamage(stats.attack + weapon->GetStats().attack + dice.SumRoll());
+	int totaldamage = stats.attack + weapon->GetStats().attack + dice.SumRoll();
+	switch (weapon->GetEffect())
+	{
+	case Weffect::None:
+		return other.ReceiveDamage(totaldamage);
+		break;
+	case Weffect::ArmorBypass:
+		return other.ReceiveRawDamage(totaldamage);
+		break;
+	}
+	return 0;
 }
 
 int Soldier::ReceiveDamage(int damage)
 {
 	assert(armor != nullptr); //If assertion fails, the soldier being attacked does not have armor (not even basic armor).
-	return ReceiveRawDamage(std::max(0,damage - stats.def - armor->GetStats().def));
+	switch (armor->GetEffect())
+	{
+	case Aeffect::none:
+		return ReceiveRawDamage(std::max(0, damage - stats.def - armor->GetStats().def));
+		break;
+	}
+	return 0;
+	
 }
 
 int Soldier::ReceiveRawDamage(int damage)
 {
-	stats.hp -= damage;
+	switch (armor->GetEffect())
+	{
+	case Aeffect::none:
+		//gotta add any other effect that doesn't passively change damage here.
+		return 	stats.hp -= damage;
+		break;
+	}
+
 	return damage;
 }
 

@@ -34,6 +34,12 @@ namespace WeaponTypes
 	class Sword : public Weapon
 	{
 	public:
-		Sword(int attack);
+		Sword();
+	};
+
+	class VoidSword : public Weapon
+	{
+	public:
+		VoidSword();
 	};
 }

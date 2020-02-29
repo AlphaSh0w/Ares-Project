@@ -25,14 +25,20 @@ Weapon::Weapon(int attack,int hp, int sp, int def, int initiative,std::string na
 {
 }
 
-Sword::Sword(int attack)
+Sword::Sword()
 	:
-	Weapon(attack,0,0,0,0,"sword",Weffect::None)
+	Weapon(20,0,0,0,0,"sword",Weffect::None)
 {
 }
 
 Fists::Fists()
 	:
 	Weapon(0,0,0,0,0, "fists", Weffect::None)
+{
+}
+
+WeaponTypes::VoidSword::VoidSword()
+	:
+	Weapon(10,0,0,0,0,"voidsword",Weffect::ArmorBypass)
 {
 }

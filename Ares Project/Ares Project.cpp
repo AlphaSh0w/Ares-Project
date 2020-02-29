@@ -12,9 +12,9 @@ int main()
 {
 	SoldierTypes::Peasant test;
 	WeaponStash w;
-	w.Add(new WeaponTypes::Sword(350));
-	w.Add(new WeaponTypes::Sword(150));
-	w.Add(new WeaponTypes::Sword(300));
+	w.Add(new WeaponTypes::Sword());
+	w.Add(new WeaponTypes::Sword());
+	w.Add(new WeaponTypes::Sword());
 	ArmorStash a;
 	a.Add(new ArmorTypes::BasicArmor);
 	a.Add(new ArmorTypes::BasicArmor);
@@ -26,7 +26,7 @@ int main()
 	w.equip(test, 1);
 	w.equip(test, 1);
 	w.equip(test, 1);
-	test.GiveWeapon(new WeaponTypes::Sword(20));
+	test.GiveWeapon(new WeaponTypes::Sword());
 	Weapon* temp = test.RemoveWeapon();
 	delete temp;
 	test.GiveArmor(new ArmorTypes::BasicArmor);
