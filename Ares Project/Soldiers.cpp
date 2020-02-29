@@ -6,24 +6,15 @@ using namespace SoldierTypes;
 
 Soldier::Soldier(int attack, int hp, int sp, int def, int initiative)
 	:
-	stats(attack,hp,sp,def,initiative)
+	stats(attack,hp,sp,def,initiative),
+	maxhealth(hp)
 {
 }
 
 int Soldier::Attack(Soldier & other)
 {
 	assert(weapon != nullptr); //If assertion fails, the soldier is attacking without having a weapon (not even fists).
-	int totaldamage = stats.attack + weapon->GetStats().attack + dice.SumRoll();
-	switch (weapon->GetEffect())
-	{
-	case Weffect::None:
-		return other.ReceiveDamage(totaldamage);
-		break;
-	case Weffect::ArmorBypass:
-		return other.ReceiveRawDamage(totaldamage);
-		break;
-	}
-	return 0;
+	return other.ReceiveDamage(stats.attack + weapon->GetStats().attack + dice.SumRoll());
 }
 
 int Soldier::ReceiveDamage(int damage)

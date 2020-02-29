@@ -27,6 +27,7 @@ protected:
 	Soldier(int attack, int hp, int sp, int def, int initiative);
 protected:
 	Stats stats;
+	int maxhealth;
 };
 namespace SoldierTypes
 {

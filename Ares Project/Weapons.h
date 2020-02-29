@@ -5,7 +5,8 @@
 enum Weffect //different weapon effects
 {
 	None,
-	ArmorBypass
+	ArmorBypass,
+	LifeSteal
 };
 
 class Weapon
@@ -41,5 +42,11 @@ namespace WeaponTypes
 	{
 	public:
 		VoidSword();
+	};
+
+	class LeechSword : public Weapon
+	{
+	public:
+		LeechSword();
 	};
 }

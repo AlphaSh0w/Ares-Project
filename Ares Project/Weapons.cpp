@@ -39,6 +39,12 @@ Fists::Fists()
 
 WeaponTypes::VoidSword::VoidSword()
 	:
-	Weapon(10,0,0,0,0,"voidsword",Weffect::ArmorBypass)
+	Weapon(10,0,0,0,0,"void sword",Weffect::ArmorBypass)
+{
+}
+
+WeaponTypes::LeechSword::LeechSword()
+	:
+	Weapon(15,0,0,0,0,"leech sword",Weffect::LifeSteal)
 {
 }
